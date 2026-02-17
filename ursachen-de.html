@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Ursachen – Industrielle Revolution in Deutschland</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tabelle optisch aufwerten */
+        .ursachen-tabelle {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .ursachen-tabelle th {
+            background-color: #c47a3d;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .ursachen-tabelle td {
+            background-color: #f9f9f9;
+            padding: 12px;
+            vertical-align: top;
+            position: relative; /* für Popups */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ursachen-tabelle tr:hover td {
+            background-color: #f0e7dc;
+        }
+
+        .table-list {
+            padding-left: 20px;
+        }
+
+        .table-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Popups für Ursachen-Wirkungen */
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #fffbe6;
+            border: 2px solid #c47a3d;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 100;
+            max-width: 300px;
+            border-radius: 6px;
+        }
+
+        .popup button {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .popup button:hover {
+            color: #333;
+        }
+
+        /* Schwarze Punkte für Popups */
+        .popup ul li {
+            color: #555; /* Textfarbe */
+        }
+
+        .popup ul li::marker {
+            color: #000; /* Punkt schwarz */
+        }
+
+        a.wirkung-link {
+            color: #c47a3d;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        a.wirkung-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+<header class="hero">
+    <h1>Ursachen</h1>
+    <p>Industrialisierung in Deutschland – später als Großbritannien</p>
+</header>
+
+<nav>
+    <a href="./index.html">Überblick</a>
+    <a href="./ursachen.html">Ursachen GB</a>
+    <a href="./veraenderungen.html">Veränderungen</a>
+    <a href="./zeitstrahl.html">Zeitstrahl</a>
+    <a href="./folgen.html">Folgen</a>
+    <a href="./quellen.html">Quellen</a>
+</nav>
+
+<main>
+<section>
+    <h2>Hauptursachen in Deutschland</h2>
+    <ul>
+        <li>politische Zersplitterung und späte Reformen</li>
+        <li>Flüsse und begrenzter Platz – nur bestimmte Regionen industrialisierbar</li>
+        <li>Bürgertum unterstützt technische Innovationen</li>
+        <li>Rohstoffe und Zollverein fördern Fabriken und Handel</li>
+    </ul>
+
+    <h2>Ursachen im Überblick</h2>
+
+    <table class="ursachen-tabelle">
+        <thead>
+            <tr>
+                <th>Politik</th>
+                <th>Geographie</th>
+                <th>Gesellschaft</th>
+                <th>Wirtschaft</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Gliederung in viele Fürstentümer
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop1')">→ Wirkung</a>
+                            <div class="popup" id="pop1">
+                                <button onclick="closePopup('pop1')">&times;</button>
+                                <ul>
+                                    <li>Uneinheitliche Gesetze verzögerten Industrialisierung.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            langsame Reformen
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop2')">→ Wirkung</a>
+                            <div class="popup" id="pop2">
+                                <button onclick="closePopup('pop2')">&times;</button>
+                                <ul>
+                                    <li>Unsichere Rahmenbedingungen für Unternehmer.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Gebirge & Flachlandschaften
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop3')">→ Wirkung</a>
+                            <div class="popup" id="pop3">
+                                <button onclick="closePopup('pop3')">&times;</button>
+                                <ul>
+                                    <li>Industrialisierung auf Ruhrgebiet & Sachsen konzentriert.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Flüsse als Transportwege
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop4')">→ Wirkung</a>
+                            <div class="popup" id="pop4">
+                                <button onclick="closePopup('pop4')">&times;</button>
+                                <ul>
+                                    <li>Effizienter Transport von Rohstoffen & Gütern.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Bildung regional unterschiedlich
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop5')">→ Wirkung</a>
+                            <div class="popup" id="pop5">
+                                <button onclick="closePopup('pop5')">&times;</button>
+                                <ul>
+                                    <li>Begrenzte Fachkräfte in einigen Regionen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Bürgertum fördert Innovation
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop6')">→ Wirkung</a>
+                            <div class="popup" id="pop6">
+                                <button onclick="closePopup('pop6')">&times;</button>
+                                <ul>
+                                    <li>Technische Neuerungen beschleunigen Industrialisierung.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Kohle- & Eisenvorkommen
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop7')">→ Wirkung</a>
+                            <div class="popup" id="pop7">
+                                <button onclick="closePopup('pop7')">&times;</button>
+                                <ul>
+                                    <li>Ermöglicht Aufbau von Maschinen & Fabriken.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Zollverein ab 1834
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop8')">→ Wirkung</a>
+                            <div class="popup" id="pop8">
+                                <button onclick="closePopup('pop8')">&times;</button>
+                                <ul>
+                                    <li>Einheitlicher Markt beschleunigt Wirtschaftswachstum.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Mechanisierung in Textil- & Bergbauindustrie
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop9')">→ Wirkung</a>
+                            <div class="popup" id="pop9">
+                                <button onclick="closePopup('pop9')">&times;</button>
+                                <ul>
+                                    <li>Schnelle Produktion & Fabrikaufbau.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="margin-top:40px; text-align:right;">
+        <a href="./ursachen.html" class="wirkung-link">← Zurück nach England</a>
+    </p>
+
+</section>
+</main>
+
+<footer>
+    <p>Emilian Klose | Klasse 11 | Geschichte</p>
+</footer>
+
+</body>
+</html>

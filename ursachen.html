@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Ursachen – Industrielle Revolution</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tabelle optisch aufwerten */
+        .ursachen-tabelle {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .ursachen-tabelle th {
+            background-color: #c47a3d;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .ursachen-tabelle td {
+            background-color: #f9f9f9;
+            padding: 12px;
+            vertical-align: top;
+            position: relative; /* für Popups */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ursachen-tabelle tr:hover td {
+            background-color: #f0e7dc;
+        }
+
+        .table-list {
+            padding-left: 20px;
+        }
+
+        .table-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Popups für Ursachen-Wirkungen */
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #fffbe6;
+            border: 2px solid #c47a3d;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 100;
+            max-width: 300px;
+            border-radius: 6px;
+        }
+
+        .popup button {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .popup button:hover {
+            color: #333;
+        }
+
+        /* Schwarze Punkte für Popups */
+        .popup ul li {
+            color: #555; /* Textfarbe */
+        }
+
+        .popup ul li::marker {
+            color: #000; /* Punkt schwarz */
+        }
+
+        a.wirkung-link {
+            color: #c47a3d;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        a.wirkung-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+<header class="hero">
+    <h1>Ursachen</h1>
+    <p>Beginn in England im 18. Jahrhundert – der Wandel der Arbeitswelt</p>
+</header>
+
+<nav>
+    <a href="./index.html">Überblick</a>
+    <a href="./ursachen.html">Ursachen</a>
+    <a href="./veraenderungen.html">Veränderungen</a>
+    <a href="./zeitstrahl.html">Zeitstrahl</a>
+    <a href="./folgen.html">Folgen</a>
+    <a href="./quellen.html">Quellen</a>
+</nav>
+
+<main>
+<section>
+    <h2>Hauptursachen in Großbritannien</h2>
+    <ul>
+        <li>Bevölkerungswachstum</li>
+        <li>technische Erfindungen (z. B. Dampfmaschine)</li>
+        <li>Kohle als neue Energiequelle</li>
+        <li>Kapital und Rohstoffe</li>
+    </ul>
+
+    <h2>Ursachen im Überblick</h2>
+
+    <table class="ursachen-tabelle">
+        <thead>
+            <tr>
+                <th>Politik</th>
+                <th>Geographie</th>
+                <th>Gesellschaft</th>
+                <th>Wirtschaft</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Glorious Revolution (1688/89) → politische Stabilität
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop1')">→ Wirkung</a>
+                            <div class="popup" id="pop1">
+                                <button onclick="closePopup('pop1')">&times;</button>
+                                <ul>
+                                    <li>Stabile Regierung förderte wirtschaftliche Entwicklung und Innovation.</li>
+                                </ul>    
+                            </div>
+                        </li>
+                        <li>
+                            Machtausgleich zwischen König und Parlament
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop2')">→ Wirkung</a>
+                            <div class="popup" id="pop2">
+                                <button onclick="closePopup('pop2')">&times;</button>
+                                <ul>
+                                    <li>Rechtsstaatliche Ordnung ermöglichte Eigentumsschutz für Investitionen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            nationale Einheit und verlässliche Ordnung
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop3')">→ Wirkung</a>
+                            <div class="popup" id="pop3">
+                                <button onclick="closePopup('pop3')">&times;</button>
+                                <ul>
+                                    <li>Einheitliches Handelssystem erleichterte Industrialisierung.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Flachlandschaft → Platz für Städte und Fabriken
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop4')">→ Wirkung</a>
+                            <div class="popup" id="pop4">
+                                <button onclick="closePopup('pop4')">&times;</button>
+                                <ul>
+                                    <li>Schneller Bau von Fabriken und Infrastruktur.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            eisfreie Küsten → freier Seehandel
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop5')">→ Wirkung</a>
+                            <div class="popup" id="pop5">
+                                <button onclick="closePopup('pop5')">&times;</button>
+                                <ul>
+                                    <li>Erleichterte Im- und Exporthandel, Zugang zu Rohstoffen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Flüsse und Gewässer → günstige Transportwege
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop6')">→ Wirkung</a>
+                            <div class="popup" id="pop6">
+                                <button onclick="closePopup('pop6')">&times;</button>
+                                <ul>
+                                    <li>Schneller Transport von Rohstoffen und Produkten.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Bürgertum offen für Wissenschaft und neue Ideen
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop7')">→ Wirkung</a>
+                            <div class="popup" id="pop7">
+                                <button onclick="closePopup('pop7')">&times;</button>
+                                <ul>
+                                    <li>Förderung technischer Innovationen und Erfindungen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Calvinismus → hoher Stellenwert von Bildung und Arbeit
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop8')">→ Wirkung</a>
+                            <div class="popup" id="pop8">
+                                <button onclick="closePopup('pop8')">&times;</button>
+                                <ul>
+                                    <li>Gut ausgebildete Arbeitskräfte standen für Fabriken zur Verfügung.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Bodenschätze (Kohle, Eisen) → wichtige Ressourcen
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop9')">→ Wirkung</a>
+                            <div class="popup" id="pop9">
+                                <button onclick="closePopup('pop9')">&times;</button>
+                                <ul>
+                                    <li>Rohstoffe ermöglichten Aufbau von Maschinen und Fabriken.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            keine Inlandszölle → freier Handel und Wirtschaftseinheit
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop10')">→ Wirkung</a>
+                            <div class="popup" id="pop10">
+                                <button onclick="closePopup('pop10')">&times;</button>
+                                <ul>
+                                    <li>Einheitlicher Markt förderte wirtschaftliches Wachstum.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            neue Anbaumethoden → hohe Erträge, weniger Arbeitskräfte
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop11')">→ Wirkung</a>
+                            <div class="popup" id="pop11">
+                                <button onclick="closePopup('pop11')">&times;</button>
+                                <ul>
+                                    <li>Arbeitskräfte standen für Fabriken zur Verfügung.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            kein Zunftzwang
+                            <a href="javascript:void(0)" class="wirkung-link" onclick="showPopup('pop12')">→ Wirkung</a>
+                            <div class="popup" id="pop12">
+                                <button onclick="closePopup('pop12')">&times;</button>
+                                <ul>
+                                    <li>Erleichterte Gründung neuer Fabriken.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top:40px; text-align:right;">
+        <a href="./ursachen-de.html" class="wirkung-link">→ Industrielle Revolution in Deutschland</a>
+    </p>
+
+</section>
+</main>
+
+<footer>
+    <p>Emilian Klose | Klasse 11 | Geschichte</p>
+</footer>
+
+</body>
+</html>

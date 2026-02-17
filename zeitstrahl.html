@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Zeitstrahl – Industrielle Revolution</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.zeitstrahl {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding-left: 40px;
+    border-left: 3px solid #c47a3d;
+}
+
+.event {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event::before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background-color: #c47a3d;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.event h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #3a3a3a;
+}
+
+.event p {
+    margin: 0;
+    font-size: 15px;
+    color: #2b2b2b;
+}
+
+a.event-link {
+    color: #c47a3d;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+a.event-link:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const events = document.querySelectorAll(".event");
+
+    function checkScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        events.forEach(event => {
+            const boxTop = event.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                event.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
+});
+</script>
+
+</head>
+<body>
+
+<header class="hero">
+<h1>Zeitstrahl der Industriellen Revolution</h1>
+<p>Wichtigste Ereignisse von England bis Deutschland, während der Industrialisierung</p>
+</header>
+
+<nav>
+<a href="./index.html">Überblick</a>
+<a href="./ursachen.html">Ursachen</a>
+<a href="./veraenderungen.html">Veränderungen</a>
+<a href="./zeitstrahl.html">Zeitstrahl</a>
+<a href="./folgen.html">Folgen</a>
+<a href="./quellen.html">Quellen</a>
+</nav>
+
+<main>
+<section>
+<div class="zeitstrahl">
+
+<div class="event">
+<h3>1712 – Erfindung der Dampfmaschine</h3>
+<p>
+Thomas Newcomen entwickelt die erste vollfunktionstüchtige Dampfmaschine.
+<a href="./newcomen.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1764 – Spinning Jenny</h3>
+<p>
+James Hargreaves erfindet die Spinning Jenny.
+<a href="./spinning-jenny.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1779 – Dampfmaschine verbessert</h3>
+<p>
+James Watt optimiert die Dampfmaschine erheblich.
+<a href="./watt.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1830 – Eisenbahnstrecke Manchester - Liverpool</h3>
+<p>
+Erste regelmäßig betriebene Personen- und Gütereisenbahn.
+<a href="./eisenbahnstrecke_manchester_liverpool.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1834 – Deutscher Zollverein</h3>
+<p>
+Einheitlicher Wirtschaftsraum in Deutschland entsteht.
+<a href="./zollverein.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1835 – Erste Eisenbahnstrecke in Deutschland</h3>
+<p>
+Neuer Transportweg und Handelsweg innerhalb Deutschlands eröffnet sich.
+<a href="./eisenbahn_de.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1850 – Eisenbahnboom</h3>
+<p>
+Massiver Ausbau der Eisenbahnnetze in Europa.
+<a href="./eisenbahn.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1856 – Bessemer Verfahren</h3>
+<p>
+Neues Verfahren zur günstigeren Stahlherstellung.
+<a href="./bessemer_verfahren.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1870/1871 – Große Industrieunternehmen</h3>
+<p>
+Fabriken wachsen zu großen Konzernen.
+<a href="./industrieunternehmen.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1879 – Elektrische Glühbirne</h3>
+<p>
+Thomas Edison entwickelt eine funktionstüchtige Glühbirne.
+<a href="./glühbirne.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1880er – Chemie-/Pharmaindustrie in Deutschland</h3>
+<p>
+Deutschland wird die Führungsnation in den Bereichen Pharma und Chemie.
+<a href="./chemie_leader.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+<div class="event">
+<h3>1883-1889 - Versicherungssystem</h3>
+<p>
+Deutschland führt unter der Regierung von Bismarck ein Versicherungssystem für Arbeiter ein.
+<a href="./bismarck_versicherungen.html" class="event-link">→ Details</a>
+</p>
+</div>
+
+</div>
+</section>
+</main>
+
+<footer>
+<p>Emilian Klose | Klasse 11 | Geschichte</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Folgen – Industrielle Revolution</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+	.folgen-tabelle {
+		width: 100%;
+		border-collapse: collapse;
+		margin-top: 20px;
+	}
+
+	.folgen-tabelle th {
+		background-color: #c47a3d; /* wie bei Ursachen */
+		color: #fff;
+		padding: 10px;
+		text-align: left;
+		font-size: 16px; /* gleiche Größe wie Ursachen-Tabelle */
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.folgen-tabelle td {
+		background-color: #f9f9f9; /* wie Ursachen-Tabelle */
+		padding: 12px;
+		vertical-align: top;
+		position: relative; /* für Popups */
+		border-bottom: 1px solid #ddd;
+	}
+
+	.folgen-tabelle tr:hover td {
+		background-color: #f0e7dc; /* Hover-Effekt wie Ursachen */
+	}
+
+	.table-list {
+		padding-left: 20px;
+		margin: 0;
+		list-style-type: disc;
+	}
+
+	.table-list li {
+		margin-bottom: 8px;
+	}
+
+	/* Popups für Folgen-Fakten */
+	.popup {
+		display: none;
+		position: absolute;
+		background-color: #fffbe6;
+		border: 2px solid #c47a3d;
+		padding: 15px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+		z-index: 100;
+		max-width: 300px;
+		border-radius: 6px;
+	}
+
+	.popup button {
+		position: absolute;
+		top: 5px;
+		right: 8px;
+		border: none;
+		background: none;
+		font-size: 16px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #856404;
+	}
+
+	.popup button:hover {
+		color: #333;
+	}
+
+	/* Schwarze Punkte in Popups */
+	.popup ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+
+	.popup ul li {
+		color: #555; /* Textfarbe */
+	}
+
+	.popup ul li::marker {
+		color: #000; /* Punkt schwarz */
+	}
+
+
+	a.wirkung-link {
+		color: #c47a3d;
+		text-decoration: none;
+		font-weight: bold;
+		margin-left: 5px;
+	}
+
+	a.wirkung-link:hover {
+		text-decoration: underline;
+	}
+
+	/* Fazit-Link */
+	.fazit-link {
+		display: inline-block;
+		margin-top: 20px;
+		color: #c47a3d;
+		font-weight: bold;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.fazit-link:hover {
+		text-decoration: underline;
+	}
+
+	/* Fazit-Box */
+	.fazit {
+		display: none;
+		margin-top: 20px;
+		padding: 20px;
+		background-color: #f0f3f8;
+		border: 2px solid #c47a3d;
+		border-radius: 10px;
+	}
+
+	.fazit.show {
+		display: block;
+	}
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        function toggleFazit() {
+            document.getElementById("abschlussfazit").classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+
+<header class="hero">
+    <h1>Folgen der Industrialisierung</h1>
+    <p>Auswirkungen auf Gesellschaft, Arbeit, Wirtschaft und Umwelt</p>
+</header>
+
+<nav>
+    <a href="index.html">Überblick</a>
+    <a href="ursachen.html">Ursachen</a>
+    <a href="veraenderungen.html">Veränderungen</a>
+    <a href="zeitstrahl.html">Zeitstrahl</a>
+    <a href="folgen.html">Folgen</a>
+    <a href="quellen.html">Quellen</a>
+</nav>
+
+<main>
+<section>
+    <h2>Folgen</h2>
+    <p>
+        Die industrielle Revolution veränderte die Arbeitswelt, soziale Strukturen, die Wirtschaft und die Umwelt grundlegend.
+    </p>
+
+    <!-- Tabelle Folgen -->
+    <table class="folgen-tabelle">
+        <thead>
+            <tr>
+                <th>Gesellschaft</th>
+                <th>Arbeit</th>
+                <th>Wirtschaft</th>
+                <th>Umwelt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Landflucht und starkes Städtewachstum
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop1'); return false;">→ Details</a>
+                            <div class="popup" id="pop1">
+                                <button onclick="closePopup('pop1')">&times;</button>
+                                <ul>
+                                    <li>Viele Menschen zogen in Industriezentren, was Städte stark anwachsen ließ.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Entstehung einer neuen Arbeiterklasse
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop2'); return false;">→ Details</a>
+                            <div class="popup" id="pop2">
+                                <button onclick="closePopup('pop2')">&times;</button>
+                                <ul>
+                                    <li>Eine eigene Arbeiterklasse entstand mit neuen sozialen Herausforderungen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Wohnungsnot und schlechte Lebensbedingungen
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop3'); return false;">→ Details</a>
+                            <div class="popup" id="pop3">
+                                <button onclick="closePopup('pop3')">&times;</button>
+                                <ul>
+                                    <li>Die Wohnverhältnisse waren oft überfüllt und unhygienisch.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            lange Arbeitszeiten
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop4'); return false;">→ Details</a>
+                            <div class="popup" id="pop4">
+                                <button onclick="closePopup('pop4')">&times;</button>
+                                <ul>
+                                    <li>Arbeiter mussten bis zu 16 Stunden pro Tag arbeiten.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Kinder- und Frauenarbeit
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop5'); return false;">→ Details</a>
+                            <div class="popup" id="pop5">
+                                <button onclick="closePopup('pop5')">&times;</button>
+                                <ul>
+                                    <li>Kinder und Frauen arbeiteten in Fabriken unter harten Bedingungen.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            geringe Löhne
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop6'); return false;">→ Details</a>
+                            <div class="popup" id="pop6">
+                                <button onclick="closePopup('pop6')">&times;</button>
+                                <ul>
+                                    <li>Die Bezahlung war niedrig und soziale Absicherung kaum vorhanden.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            starkes Wirtschaftswachstum
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop7'); return false;">→ Details</a>
+                            <div class="popup" id="pop7">
+                                <button onclick="closePopup('pop7')">&times;</button>
+                                <ul>
+                                    <li>Die Produktion stieg rasant und Unternehmen expandierten.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Massenproduktion senkt Preise
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop8'); return false;">→ Details</a>
+                            <div class="popup" id="pop8">
+                                <button onclick="closePopup('pop8')">&times;</button>
+                                <ul>
+                                    <li>Güter wurden durch Maschinen günstiger, was vorteilhaft für die breite Bevölkerung war.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Entstehung großer Industrieunternehmen
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop9'); return false;">→ Details</a>
+                            <div class="popup" id="pop9">
+                                <button onclick="closePopup('pop9')">&times;</button>
+                                <ul>
+                                    <li>Viele Fabriken wuchsen zu großen Unternehmen heran.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="table-list">
+                        <li>
+                            Umweltbelastungen
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop10'); return false;">→ Details</a>
+                            <div class="popup" id="pop10">
+                                <button onclick="closePopup('pop10')">&times;</button>
+                                <ul>
+                                    <li>Luft- und Wasserverschmutzung nahm deutlich zu.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            Landschaftsveränderungen
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop11'); return false;">→ Details</a>
+                            <div class="popup" id="pop11">
+                                <button onclick="closePopup('pop11')">&times;</button>
+                                <ul>
+                                    <li>Flüsse, Wälder und Böden wurden stark verändert oder zerstört.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            gesundheitliche Belastungen
+                            <a href="#" class="wirkung-link" onclick="showPopup('pop12'); return false;">→ Details</a>
+                            <div class="popup" id="pop12">
+                                <button onclick="closePopup('pop12')">&times;</button>
+                                <ul>
+                                    <li>Die Bevölkerung litt, durch schlechte Umweltbedingungen, an verschiedenen Krankheiten, wie Tuberkulose, Cholera, Pocken, usw.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Fazit-Link -->
+	<a href="#" class="fazit-link" onclick="toggleFazit(); return false;">→ Abschlussfazit</a>
+
+    <!-- Fazit -->
+    <div class="fazit" id="abschlussfazit">
+        <h3>Abschlussfazit</h3>
+        <p>
+            Die industrielle Revolution brachte großen wirtschaftlichen Fortschritt,
+            führte jedoch auch zu sozialen Ungleichheiten und Umweltproblemen.
+            Reformen, Gewerkschaften und staatliche Eingriffe halfen, diese Probleme langfristig zu mindern.
+        </p>
+    </div>
+
+</section>
+</main>
+
+<footer>
+    <p>Emilian Klose | Klasse 11 | Geschichte</p>
+</footer>
+
+</body>
+</html>

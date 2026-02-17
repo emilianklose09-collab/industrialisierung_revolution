@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Veränderungen – Industrielle Revolution</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Tabelle optisch wie bei Folgen/Ursachen */
+.veraenderungen-tabelle {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	border: 1px solid #ddd;
+}
+
+.veraenderungen-tabelle thead th:first-child {
+    background-color: #20c997; /* Türkis */
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+}
+
+.veraenderungen-tabelle thead th:last-child {
+    background-color: #8e44ad; /* Violett */
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+}
+
+.veraenderungen-tabelle td {
+    background-color: #f9f9f9;
+    padding: 12px;
+    vertical-align: top;
+    position: relative; /* für Popups */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tabellen-Zellen */
+.veraenderungen-tabelle td {
+    padding: 15px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.veraenderungen-tabelle tr:hover td {
+            background-color: #f0e7dc;
+			border: 1px solid #ddd;
+		}
+
+.table-list {
+	padding-left: 20px;
+}
+
+.table-list li {
+	margin-bottom: 8px;
+	position: relative;
+}
+
+/* Popups */
+.popup {
+	display: none;
+	position: absolute;
+	background-color: #fffbe6;
+	border: 2px solid #c47a3d;
+	padding: 15px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+	z-index: 100;
+	max-width: 300px;
+	border-radius: 6px;
+	top: 0;
+	left: 30px;
+}
+
+.popup button {
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	border: none;
+	background: none;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #856404;
+}
+
+.popup button:hover {
+	color: #333;
+}
+
+/* Punkte in Popups: Schwarzer Rand, farblos innen */
+.popup ul {
+	padding-left: 20px;
+	margin: 0;
+	list-style: none;
+}
+
+.popup ul li {
+	position: relative;
+	margin-bottom: 8px;
+	padding-left: 20px;
+}
+
+.popup ul li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 8px;
+	width: 5px;
+	height: 5px;
+	border: 1.5px solid #000;
+	border-radius: 50%;
+	background-color: transparent;
+}
+
+/* Details-Link */
+a.wirkung-link {
+	color: #c47a3d;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+a.wirkung-link:hover {
+	text-decoration: underline;
+}
+
+/* Fazit-Box */
+.fazit {
+	display: none;
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #f0f3f8;
+	border: 2px solid #c47a3d;
+	border-radius: 10px;
+}
+
+.fazit.show {
+	display: block;
+}
+
+.fazit-link {
+	color: #c47a3d;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 40px;
+}
+
+.fazit-link:hover {
+	text-decoration: underline;
+}
+</style>
+<script>
+function showPopup(id) {
+    document.getElementById(id).style.display = 'block';
+}
+function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+}
+function toggleFazit() {
+    document.getElementById("abschlussfazit").classList.toggle("show");
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+<h1>Veränderungen durch die Industrielle Revolution</h1>
+<p>Vergleich zwischen Vorher und Nachher</p>
+</header>
+
+<nav>
+    <a href="./index.html">Überblick</a>
+    <a href="./ursachen.html">Ursachen</a>
+    <a href="./veraenderungen.html">Veränderungen</a>
+    <a href="./zeitstrahl.html">Zeitstrahl</a>
+    <a href="./folgen.html">Folgen</a>
+    <a href="./quellen.html">Quellen</a>
+</nav>
+
+<main>
+<section>
+<h2>Veränderungen</h2>
+<p>Die Industrialisierung in Europa und Nordamerika revolutionierte die Bereiche Arbeit, Gesellschaft, Wirtschaft und Umwelt tiefgreifend und langfristig.</p>
+
+<table class="veraenderungen-tabelle">
+<thead>
+<tr>
+<th>Vorher (vor Industrialisierung)</th>
+<th>Nachher (nach Industrialisierung)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<ul class="table-list">
+<li>
+Handarbeit in kleinen Werkstätten
+<a href="#" class="wirkung-link" onclick="showPopup('pop1'); return false;">→ Details</a>
+<div class="popup" id="pop1">
+<button onclick="closePopup('pop1')">&times;</button>
+<ul>
+<li>Die Produktion war langsam und auf wenige Handwerker beschränkt.</li>
+</ul>
+</div>
+</li>
+<li>
+begrenzte Transportmöglichkeiten
+<a href="#" class="wirkung-link" onclick="showPopup('pop2'); return false;">→ Details</a>
+<div class="popup" id="pop2">
+<button onclick="closePopup('pop2')">&times;</button>
+<ul>
+<li>Güter konnten nur lokal transportiert werden und der Handel war eingeschränkt.</li>
+</ul>
+</div>
+</li>
+<li>
+ländliche Bevölkerung
+<a href="#" class="wirkung-link" onclick="showPopup('pop3'); return false;">→ Details</a>
+<div class="popup" id="pop3">
+<button onclick="closePopup('pop3')">&times;</button>
+<ul>
+<li>Die meisten Menschen lebten auf dem Land und arbeiteten in der Landwirtschaft.</li>
+</ul>
+</div>
+</li>
+</ul>
+</td>
+<td>
+<ul class="table-list">
+<li>
+Maschinenproduktion in Fabriken
+<a href="#" class="wirkung-link" onclick="showPopup('pop4'); return false;">→ Details</a>
+<div class="popup" id="pop4">
+<button onclick="closePopup('pop4')">&times;</button>
+<ul>
+<li>Die Mechanisierung beschleunigte die Produktion und ermöglichte Massenware.</li>
+</ul>
+</div>
+</li>
+<li>
+schneller Transport durch Eisenbahn
+<a href="#" class="wirkung-link" onclick="showPopup('pop5'); return false;">→ Details</a>
+<div class="popup" id="pop5">
+<button onclick="closePopup('pop5')">&times;</button>
+<ul>
+<li>Rohstoffe und Produkte konnten effizient über weite Strecken transportiert werden.</li>
+</ul>
+</div>
+</li>
+<li>
+Urbanisierung & neue Arbeitsplätze
+<a href="#" class="wirkung-link" onclick="showPopup('pop6'); return false;">→ Details</a>
+<div class="popup" id="pop6">
+<button onclick="closePopup('pop6')">&times;</button>
+<ul>
+<li>Menschen zogen in Städte und neue Fabrikarbeitsplätze entstanden.</li>
+</ul>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<a href="#" class="fazit-link" onclick="toggleFazit(); return false;">→ Abschlussfazit</a>
+
+<div class="fazit" id="abschlussfazit">
+<h3>Abschlussfazit</h3>
+<p>
+Die industrielle Revolution führte zu tiefgreifenden gesellschaftlichen, wirtschaftlichen und technischen Veränderungen.
+Sie erhöhte die Produktivität, beschleunigte den Handel und veränderte die Lebensweise der Menschen grundlegend.
+</p>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Emilian Klose | Klasse 11 | Geschichte</p>
+</footer>
+
+</body>
+</html>

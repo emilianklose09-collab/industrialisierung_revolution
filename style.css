@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f5f3ef;
+    color: #2b2b2b;
+}
+
+.hero {
+    background: linear-gradient(to right, #2b2b2b, #444);
+    color: #f5f3ef;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #3a3a3a;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: #f5f3ef;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #c47a3d;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    border-left: 5px solid #c47a3d;
+    padding-left: 15px;
+    color: #3a3a3a;
+}
+
+.vergleich {
+    display: flex;
+    gap: 30px;
+}
+
+.vergleich div {
+    background-color: #f0ede8;
+    padding: 20px;
+    flex: 1;
+    border-left: 4px solid #c47a3d;
+}
+
+.timeline {
+    border-left: 3px solid #c47a3d;
+    padding-left: 25px;
+}
+
+.event {
+    margin-bottom: 25px;
+}
+
+.event span {
+    font-weight: bold;
+    color: #c47a3d;
+}
+
+blockquote {
+    margin-top: 30px;
+    padding-left: 20px;
+    font-style: italic;
+    border-left: 4px solid #c47a3d;
+    color: #555;
+}
+
+footer {
+    background-color: #2b2b2b;
+    color: #f5f3ef;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Infoboxen */
+.infobox {
+    display: none; /* start hidden */
+    position: relative;
+    background-color: #fff3cd; /* helles Gelb */
+    border-left: 6px solid #ffc107;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease; /* sanftes Ein-/Ausblenden */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.infobox.show {
+    display: block;
+    opacity: 1;
+    max-height: 500px; /* genug Platz für Text */
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #856404;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Toggle Links über den Infoboxen */
+.toggle-links a {
+    cursor: pointer;
+    color: #0056b3;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.toggle-links a:hover {
+    color: #003f7f;
+}
+
+.ursachen-tabelle {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.ursachen-tabelle th:nth-child(1) {
+    background-color: #dc3545;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.ursachen-tabelle th:nth-child(2) {
+	background-color: #28a745;
+	color: #f5f3ef;
+	padding: 15px;
+	text-align: left;
+}
+
+.ursachen-tabelle th:nth-child(3) {
+	background-color: #ff8800;
+	color: #f5f3ef;
+	padding: 15px;
+	text-align: left
+
+}.ursachen-tabelle th:nth-child(4) {
+	background-color: #007bff;
+	color: #f5f3ef;
+	padding: 15px;
+	text-align: left
+}
+
+.ursachen-tabelle td {
+    background-color: #f0ede8;
+    padding: 15px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+/* Hover-Effekt für Ursachen-Tabelle */
+.ursachen-tabelle td:hover {
+    background-color: #e6dfd5;
+    transition: background-color 0.2s ease;
+}
+
+/* Spaltenköpfe etwas markanter */
+.ursachen-tabelle th {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-list {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.ursachen-tabelle td {
+    vertical-align: top;
+}
+
+.fakten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.fakt-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background-color: #f0f3f8;
+    border: 2px solid #c47a3d;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fakt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.fakt-nummer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #c47a3d;
+    min-width: 30px;
+}
+
+.fakt-card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.fakt-card p {
+    margin: 4px 0 0;
+    font-size: 14px;
+}
+
+.folgen-tabelle {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd; /* äußerer Rahmen der Tabelle */
+}
+
+.folgen-tabelle th:nth-child(1) {
+    background-color: #ff8800;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.folgen-tabelle th:nth-child(2) {
+    background-color: #dc3545;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.folgen-tabelle th:nth-child(3) {
+    background-color: #007bff;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.folgen-tabelle th:nth-child(4) {
+    background-color: #28a745;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.folgen-tabelle td {
+    background-color: #f0ede8;
+    padding: 15px;
+    vertical-align: top;
+    border: 1px solid #ddd; /* Zellenrahmen für Spalten */
+}
+
+	figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+.veraenderungen-tabelle {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd; /* äußerer Rahmen der Tabelle */
+}
+
+.veraenderungen-tabelle thead tr th:first-child {
+    background-color: #20c997;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.veraenderungen-tabelle thead tr th:last-child {
+    background-color: #8e44ad;
+    color: #f5f3ef;
+    padding: 15px;
+    text-align: left;
+}
+
+.veraenderungen-tabelle td {
+    background-color: #f0ede8;
+    padding: 15px;
+    vertical-align: top;
+    border: 1px solid #ddd; /* Zellenrahmen */
+}
+
+	figure {
+	margin: 20px 0;
+	text-align: center;
+}
+
+figcaption {
+	font-size: 14px;
+	color: #555;
+	margin-top: 8px;
+}
+
+/* ----------------------------- */
+/* Vier Wasserzeichen-Logos über CSS, komplett ohne HTML-Anpassung */
+/* ----------------------------- */
+body {
+    position: relative;
+}
+
+body {
+    position: relative;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Oben links */
+body::before {
+    content: "";
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' stroke='black' stroke-width='3' fill='none'/><line x1='32' y1='2' x2='32' y2='62' stroke='black' stroke-width='2'/><line x1='2' y1='32' x2='62' y2='32' stroke='black' stroke-width='2'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.11;
+    pointer-events: none;
+    z-index: 0;
+	transform: rotate(-20deg);
+}
+
+/* Oben rechts */
+body::after {
+    content: "";
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' stroke='black' stroke-width='3' fill='none'/><line x1='32' y1='2' x2='32' y2='62' stroke='black' stroke-width='2'/><line x1='2' y1='32' x2='62' y2='32' stroke='black' stroke-width='2'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: 0;
+	transform: rotate(20deg);
+}
+
+/* Unten links */
+html::before {
+    content: "";
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' stroke='black' stroke-width='3' fill='none'/><line x1='32' y1='2' x2='32' y2='62' stroke='black' stroke-width='2'/><line x1='2' y1='32' x2='62' y2='32' stroke='black' stroke-width='2'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.215;
+    pointer-events: none;
+    z-index: 80;
+	transform: rotate(-20deg);
+}
+
+/* Unten rechts */
+html::after {
+    content: "";
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' stroke='black' stroke-width='3' fill='none'/><line x1='32' y1='2' x2='32' y2='62' stroke='black' stroke-width='2'/><line x1='2' y1='32' x2='62' y2='32' stroke='black' stroke-width='2'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.21;
+    pointer-events: none;
+    z-index: 0;
+	transform: rotate(20deg);
+}
